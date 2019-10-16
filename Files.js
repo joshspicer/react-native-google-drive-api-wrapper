@@ -1,4 +1,4 @@
-import RNFS from "react-native-fs";
+//import RNFS from "react-native-fs";
 import utf8 from "utf8";
 import {
    StaticUtils,
@@ -127,17 +127,21 @@ export default class Files {
    }
    
    download(fileId, downloadFileOptions, queryParams = {}) {
-      queryParams.alt = "media";
       
-      const parameters = _stringifyQueryParams(queryParams);
+      console.log("JOSH DISABLED download()")
       
-      downloadFileOptions.fromUrl = `${GDrive._urlFiles}/${fileId}${parameters}`;
       
-      downloadFileOptions.headers = Object.assign({
-         "Authorization": `Bearer ${GDrive.accessToken}`
-      }, downloadFileOptions.headers);
+//       queryParams.alt = "media";
       
-      return RNFS.downloadFile(downloadFileOptions);
+//       const parameters = _stringifyQueryParams(queryParams);
+      
+//       downloadFileOptions.fromUrl = `${GDrive._urlFiles}/${fileId}${parameters}`;
+      
+//       downloadFileOptions.headers = Object.assign({
+//          "Authorization": `Bearer ${GDrive.accessToken}`
+//       }, downloadFileOptions.headers);
+      
+//       return RNFS.downloadFile(downloadFileOptions);
    }
    
    list(queryParams) {
